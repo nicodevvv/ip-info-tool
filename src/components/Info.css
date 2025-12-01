@@ -36,7 +36,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 20px;
+    padding: 0 20px 20px 20px;
     background-color: #313030;
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
@@ -80,6 +80,21 @@
             .title {
                 font-family: 'Hack Nerd Font Bold', sans-serif;
             }
+
+            .value {
+                button {
+                    display: none;
+                }
+            }
+
+            .value:hover button {
+                display: inline-block;
+            }
+
+            @media(max-width: 768px) {
+                flex-direction: column;
+                gap: 4px;
+            }
         }
 
         .content-data:hover {
@@ -101,5 +116,22 @@
 
     button {
         width: 33%;
+    }
+}
+
+@media (max-width: 768px) {
+    .search-container {
+        flex-direction: column;
+
+        input,
+        button {
+            width: 100%;
+        }
+    }
+
+    .content-data {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
     }
 }

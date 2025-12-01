@@ -1,11 +1,11 @@
 {
     "title": "IP Information Tool",
     "searchPlaceholder": "Enter an IP address",
-    "searchButton": "Search",
+    "searchButton": "Get information",
     "loading": "Loading...",
     "error": "Error loading data",
     "ipInfo": {
-        "ip": "IP Addressssss",
+        "ipv4": "IPv4",
         "city": "City",
         "region": "Region",
         "country": "Country",
@@ -17,6 +17,7 @@
         "languages": "Languages",
         "latitude": "Latitude",
         "longitude": "Longitude",
+        "location": "Location",
         "asn": "ASN",
         "threat": "Threat Information"
     },

@@ -17,6 +17,7 @@
         "languages": "Idiomas",
         "latitude": "Latitud",
         "longitude": "Longitud",
+        "location": "Ubicación",
         "asn": "ASN",
         "threat": "Información de Amenazas"
     },

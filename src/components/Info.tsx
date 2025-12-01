@@ -4,6 +4,7 @@ import type { IpData } from '../types';
 import { useTranslation } from 'react-i18next';
 import { apiInfoMock } from '../mocks/api-info-mock'
 import { getApiData } from '../services/ip-info';
+import { CopyButton } from './CopyButton';
 export const Info = () => {
     const { t } = useTranslation();
     const [data, setData] = useState<IpData | null>(null);
@@ -65,7 +66,10 @@ export const Info = () => {
                         <div className='content-data'>
                             <p className='title'>
                                 {t('ipInfo.ipv4')}</p>
-                            <p className='value'>{data.ip}</p>
+                            <p className='value'>
+                                {data.ip}
+                                <CopyButton text={data.ip} />
+                            </p>
                         </div>
                         <div className='content-data'>
                             <p className='title'>{t('ipInfo.country')}</p>
@@ -88,12 +92,10 @@ export const Info = () => {
                             <p className='value'>{data.asn.asn} - {data.asn.name}</p>
                         </div>
                         <div className="content-data">
-                            <p className='title'>{t('ipInfo.latitude')}</p>
-                            <p className='value'>{data.latitude}</p>
-                        </div>
-                        <div className="content-data">
-                            <p className='title'>{t('ipInfo.longitude')}</p>
-                            <p className='value'>{data.longitude}</p>
+                            <p className='title'>{t('ipInfo.location')}</p>
+                            <p className='value'>{data.latitude}, {data.longitude}
+                                <CopyButton text={`${data.latitude}, ${data.longitude}`} />
+                            </p>
                         </div>
                     </section>
                 )}
