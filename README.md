@@ -1,73 +1,132 @@
-# React + TypeScript + Vite
+# IP Information Tool
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern web application built with React, TypeScript, and Vite that provides detailed information about IP addresses, including geolocation, ISP details, threat analysis, and more.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 🌍 **Geolocation Data**: Get city, region, country, and coordinates for any IP address
+- 🏢 **ISP Information**: View ASN details and network provider information
+- 🔒 **Security Analysis**: Check for threats, proxies, VPNs, and known attackers
+- 💱 **Currency & Language**: Display local currency and spoken languages
+- 🌐 **Multi-language Support**: Interface available in English and Spanish
+- 📋 **Copy to Clipboard**: Easily copy IP addresses, coordinates, and other data
+- 🎨 **Terminal-style UI**: Clean, retro-inspired design
 
-## React Compiler
+## Technologies Used
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+- **React 18** with TypeScript
+- **Vite** for fast development and building
+- **i18next** for internationalization
+- **IPData API** for IP information
 
-## Expanding the ESLint configuration
+## Prerequisites
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Before you begin, you need to:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+1. Register for a free account at [IPData.co](https://ipdata.co/)
+2. Obtain your API key from the dashboard
+3. Have Node.js (v18 or higher) installed
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Installation
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+1. Clone the repository:
+```bash
+git clone <repository-url>
+cd ip-info-tool
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+2. Install dependencies:
+```bash
+npm install
 ```
+
+3. Create a `.env` file in the root directory:
+```bash
+cp .env.example .env
+```
+
+4. Add your IPData API key to the `.env` file:
+```env
+VITE_API_KEY=your_api_key_here
+```
+
+## Usage
+
+### Development Server
+
+Start the development server:
+```bash
+npm run dev
+```
+
+The application will be available at `http://localhost:5173`
+
+### Build for Production
+
+Create a production build:
+```bash
+npm run build
+```
+
+Preview the production build:
+```bash
+npm run preview
+```
+
+## API Configuration
+
+This project uses the [IPData API](https://ipdata.co/). The API provides:
+
+- Geolocation data (city, region, country, coordinates)
+- ASN and ISP information
+- Threat intelligence (proxies, VPNs, known attackers)
+- Time zone and currency information
+- Language data
+
+**Free tier limitations:**
+- 1,500 requests per day
+- HTTPS support
+- All features included
+
+For higher limits, check their [pricing plans](https://ipdata.co/pricing.html).
+
+## Project Structure
+
+```
+ip-info-tool/
+├── public/
+│   └── locales/          # Translation files
+│       ├── en.json
+│       └── es.json
+├── src/
+│   ├── components/       # React components
+│   ├── services/         # API service layer
+│   ├── mocks/           # Mock data for development
+│   ├── types.d.ts       # TypeScript interfaces
+│   └── i18n.ts          # i18next configuration
+├── .env.example         # Environment variables template
+└── README.md
+```
+
+## Environment Variables
+
+| Variable | Description | Required |
+|----------|-------------|----------|
+| `VITE_API_KEY` | Your IPData API key | Yes |
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License.
+
+## Acknowledgments
+
+- IP data provided by [IPData.co](https://ipdata.co/)
+- Icons and UI inspiration from retro terminal interfaces
