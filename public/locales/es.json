@@ -1,11 +1,11 @@
 {
     "title": "Herramienta de Información de IP",
     "searchPlaceholder": "Introduce una dirección IP",
-    "searchButton": "Buscar",
+    "searchButton": "Obtener información",
     "loading": "Cargando...",
     "error": "Error al cargar los datos",
     "ipInfo": {
-        "ip": "Dirección IP",
+        "ipv4": "IPv4",
         "city": "Ciudad",
         "region": "Región",
         "country": "País",
