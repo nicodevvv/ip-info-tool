@@ -1,0 +1,36 @@
+{
+    "title": "IP Information Tool",
+    "searchPlaceholder": "Enter an IP address",
+    "searchButton": "Search",
+    "loading": "Loading...",
+    "error": "Error loading data",
+    "ipInfo": {
+        "ip": "IP Addressssss",
+        "city": "City",
+        "region": "Region",
+        "country": "Country",
+        "continent": "Continent",
+        "postal": "Postal Code",
+        "coordinates": "Coordinates",
+        "timezone": "Timezone",
+        "currency": "Currency",
+        "languages": "Languages",
+        "latitude": "Latitude",
+        "longitude": "Longitude",
+        "asn": "ASN",
+        "threat": "Threat Information"
+    },
+    "asn": {
+        "name": "Name",
+        "domain": "Domain",
+        "route": "Route",
+        "type": "Type"
+    },
+    "threat": {
+        "isTor": "Is Tor",
+        "isProxy": "Is Proxy",
+        "isDatacenter": "Is Datacenter",
+        "isAnonymous": "Is Anonymous",
+        "isThreat": "Is Threat"
+    }
+}

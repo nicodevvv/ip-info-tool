@@ -1,0 +1,36 @@
+{
+    "title": "Herramienta de Información de IP",
+    "searchPlaceholder": "Introduce una dirección IP",
+    "searchButton": "Buscar",
+    "loading": "Cargando...",
+    "error": "Error al cargar los datos",
+    "ipInfo": {
+        "ip": "Dirección IP",
+        "city": "Ciudad",
+        "region": "Región",
+        "country": "País",
+        "continent": "Continente",
+        "postal": "Código Postal",
+        "coordinates": "Coordenadas",
+        "timezone": "Zona Horaria",
+        "currency": "Moneda",
+        "languages": "Idiomas",
+        "latitude": "Latitud",
+        "longitude": "Longitud",
+        "asn": "ASN",
+        "threat": "Información de Amenazas"
+    },
+    "asn": {
+        "name": "Nombre",
+        "domain": "Dominio",
+        "route": "Ruta",
+        "type": "Tipo"
+    },
+    "threat": {
+        "isTor": "Es Tor",
+        "isProxy": "Es Proxy",
+        "isDatacenter": "Es Datacenter",
+        "isAnonymous": "Es Anónimo",
+        "isThreat": "Es Amenaza"
+    }
+}
