@@ -14,7 +14,7 @@ A modern web application built with React, TypeScript, and Vite that provides de
 
 ## Technologies Used
 
-- **React 18** with TypeScript
+- **React 19** with TypeScript
 - **Vite** for fast development and building
 - **i18next** for internationalization
 - **IPData API** for IP information
