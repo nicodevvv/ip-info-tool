@@ -5,6 +5,8 @@ import { useTranslation } from 'react-i18next';
 import { apiInfoMock } from '../mocks/api-info-mock'
 import { getApiData } from '../services/ip-info';
 import { CopyButton } from './CopyButton';
+import { ToastContainer, toast } from 'react-toastify';
+
 export const Info = () => {
     const { t } = useTranslation();
     const [data, setData] = useState<IpData | null>(null);
@@ -22,10 +24,12 @@ export const Info = () => {
         getApiData(searchIp)
             .then((data) => {
                 setData(data);
+                setError(null);
                 setLoading(false);
             })
             .catch((error) => {
                 setError(error.message);
+                toast.error('Error fetching data, using mock data instead. ONLY FOR DEBUGGING PURPOSES');
                 //ONLY FOR DEBUGGING PURPOSES
                 setData(apiInfoMock);
                 console.log("Error fetching IP data:", error);
@@ -66,40 +70,41 @@ export const Info = () => {
                         <div className='content-data'>
                             <p className='title'>
                                 {t('ipInfo.ipv4')}</p>
-                            <p className='value'>
+                            <div className='value'>
                                 {data.ip}
                                 <CopyButton text={data.ip} />
-                            </p>
+                            </div>
                         </div>
                         <div className='content-data'>
                             <p className='title'>{t('ipInfo.country')}</p>
-                            <p className='value'>
+                            <div className='value'>
                                 {data.country_name} {data.emoji_flag}
-                            </p>
+                            </div>
                         </div>
                         <div className="content-data">
                             <p className='title'>{t('ipInfo.city')}</p>
-                            <p className='value'>
+                            <div className='value'>
                                 {data.city}
-                            </p>
+                            </div>
                         </div>
                         <div className="content-data">
                             <p className='title'>{t('ipInfo.region')}</p>
-                            <p className='value'>{data.region}</p>
+                            <div className='value'>{data.region}</div>
                         </div>
                         <div className="content-data">
                             <p className='title'>{t('ipInfo.asn')}</p>
-                            <p className='value'>{data.asn.asn} - {data.asn.name}</p>
+                            <div className='value'>{data.asn.asn} - {data.asn.name}</div>
                         </div>
                         <div className="content-data">
                             <p className='title'>{t('ipInfo.location')}</p>
-                            <p className='value'>{data.latitude}, {data.longitude}
+                            <div className='value'>{data.latitude}, {data.longitude}
                                 <CopyButton text={`${data.latitude}, ${data.longitude}`} />
-                            </p>
+                            </div>
                         </div>
                     </section>
                 )}
             </main>
+            <ToastContainer limit={1} />
         </>
     );
 }
